@@ -3,6 +3,14 @@
 All notable changes to recensa-session are documented here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.1.2] — 2026-07-12
+
+### Changed
+- README: enabled the npm and CI badges, and fixed the Recensa link for the
+  npm package page.
+- SECURITY / CONTRIBUTING / CODE_OF_CONDUCT: filled the reporting URL and
+  contact placeholders; corrected the clone directory in the setup guide.
+
 ## [0.1.1] — 2026-07-12
 
 ### Changed
