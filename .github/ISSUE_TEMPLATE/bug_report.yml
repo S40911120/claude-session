@@ -1,0 +1,30 @@
+name: Bug report
+description: A command or library call is broken or behaves unexpectedly
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you run, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Exact command
+      placeholder: "e.g. recensa-session overview --latest"
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: OS and Node version
+      placeholder: "e.g. Windows 11, node -v → v24.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: transcript
+    attributes:
+      label: Reproducing transcript (optional)
+      description: "A minimal session .jsonl that reproduces it — mask it first with `recensa-session redact` and review the output before attaching."

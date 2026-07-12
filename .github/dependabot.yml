@@ -1,0 +1,7 @@
+version: 2
+updates:
+  # Zero runtime dependencies by design — only the CI actions need version updates.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
