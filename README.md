@@ -1,7 +1,8 @@
-# recensa-session
+# @recensa/claude-session
 
-**A dependency-free CLI and Node library for Claude Code session JSONL — parse, verify,
-repair, fork, merge, and redact the `*.jsonl` transcripts under `~/.claude/projects/`.**
+**A dependency-free Node library and CLI (`recensa-session`) for Claude Code session
+JSONL — parse, verify, repair, fork, merge, and redact the `*.jsonl` transcripts under
+`~/.claude/projects/`.**
 
 <p>
   <img src="https://img.shields.io/badge/node-%3E%3D22-brightgreen?style=flat" alt="Node >= 22">
@@ -12,9 +13,9 @@ repair, fork, merge, and redact the `*.jsonl` transcripts under `~/.claude/proje
 </p>
 
 One bad structural edit bricks a transcript: drop a `tool_result`, orphan a `tool_use`,
-and `claude --resume` fails with a permanent API 400. recensa-session reads, audits, and
-repairs those transcripts from the command line or in-process — Node core only, no
-runtime dependencies. It is the engine behind the
+and `claude --resume` fails with a permanent API 400. This package reads, audits, and
+repairs those transcripts — from the command line as `recensa-session`, or in-process
+as a library — Node core only, no runtime dependencies. It is the engine behind the
 [Recensa](https://github.com/S40911120/recensa) session viewer.
 
 > **Unofficial.** A community tool for working with Claude Code's on-disk session files.
@@ -193,13 +194,13 @@ const bin = require.resolve('@recensa/claude-session/bin/recensa-session.js');
 the CLI in `node_modules/.bin`, not on your PATH. Run it with `npx @recensa/claude-session ...`, or
 install globally with `npm install -g @recensa/claude-session`.
 
-**"No sessions found", or it reads the wrong directory.** recensa-session looks in
-`RECENSA_PROJECTS_DIR`, then `CLAUDE_CONFIG_DIR/projects`, then `~/.claude/projects`.
+**"No sessions found", or it reads the wrong directory.** The sessions root resolves
+as `RECENSA_PROJECTS_DIR`, then `CLAUDE_CONFIG_DIR/projects`, then `~/.claude/projects`.
 If your Claude config lives elsewhere — a relocated or containerized setup — point
 `RECENSA_PROJECTS_DIR` at the directory that holds the `*.jsonl` files.
 
-**Syntax or API errors on startup.** recensa-session targets Node 22 or newer. Check `node -v`
-and upgrade if it is older.
+**Syntax or API errors on startup.** The package targets Node 22 or newer. Check
+`node -v` and upgrade if it is older.
 
 ## License
 
