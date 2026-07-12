@@ -3,6 +3,15 @@
 All notable changes to recensa-session are documented here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.1.3] — 2026-07-12
+
+### Fixed
+- README: the Programmatic API example used an invalid identifier
+  (`const recensa-session = …`) and top-level `await`; it now runs as pasted.
+
+### Added
+- Issue and pull-request templates; Dependabot for CI action updates.
+
 ## [0.1.2] — 2026-07-12
 
 ### Changed

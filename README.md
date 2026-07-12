@@ -129,11 +129,13 @@ Every subcommand accepts the same session identifiers:
 Call the same logic in-process, without spawning a subprocess:
 
 ```js
-const recensa-session = require('@recensa/claude-session');
+const claudeSession = require('@recensa/claude-session');
 
-const report = await recensa-session.overview('/path/to/session.jsonl');
-const budget = await recensa-session.tokenBudget('/path/to/session.jsonl');
+const report = await claudeSession.overview('/path/to/session.jsonl');
+const budget = await claudeSession.tokenBudget('/path/to/session.jsonl');
 ```
+
+(Inside CommonJS, wrap the `await` calls in an async function.)
 
 Each function takes an absolute path to a session `.jsonl`. The analysis functions return
 the same object shape as the CLI's `<command> --json` output (the equivalence is checked
