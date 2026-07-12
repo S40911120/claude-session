@@ -1,0 +1,46 @@
+{
+  "name": "@recensa/claude-session",
+  "version": "0.1.1",
+  "description": "Zero-dependency Node library and CLI to parse, search, verify, and repair local Claude Code session JSONL — the session engine behind Recensa.",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "session",
+    "jsonl",
+    "transcript",
+    "parser",
+    "cli",
+    "recensa"
+  ],
+  "homepage": "https://github.com/S40911120/claude-session#readme",
+  "bugs": "https://github.com/S40911120/claude-session/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S40911120/claude-session.git"
+  },
+  "main": "index.js",
+  "bin": {
+    "recensa-session": "bin/recensa-session.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "files": [
+    "index.js",
+    "bin",
+    "lib",
+    "intel",
+    "surgery",
+    "README.md",
+    "!intel/test",
+    "!**/*.test.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Justin Chen",
+  "license": "MIT"
+}

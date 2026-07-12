@@ -1,0 +1,28 @@
+# CI: run the test suite on Linux and Windows across supported Node versions.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]   # test on Linux + Windows
+        node: [22, 24]                         # node --test floor is 22 (package engines: node >= 22)
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Disable autocrlf (Windows correctness)
+        run: git config --global core.autocrlf false
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Test
+        run: node --test          # zero-dependency package — no install step needed
